@@ -15,6 +15,20 @@ function App() {
     setPlayerChoice(choice);
     const randomChoice = choices[Math.floor(Math.random() * choices.length)];
     setComputerChoice(randomChoice);
+
+    // handle result of the game round and update scores
+    if (!choice || !randomChoice) return;
+    if (choice !== randomChoice) {
+      if (
+        (choice === "rock" && randomChoice === "scissors") ||
+        (choice === "paper" && randomChoice === "rock") ||
+        (choice === "scissors" && randomChoice === "paper")
+      ) {
+        setPlayerScore((prev) => prev + 1);
+      } else {
+        setComputerScore((prev) => prev + 1);
+      }
+    }
   };
 
   return (
