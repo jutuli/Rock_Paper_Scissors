@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# Rock Paper Scissors Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Rock Paper Scissors game built with **React**. It allows players to compete against a computer opponent in a best-of-five match.
 
-Currently, two official plugins are available:
+![Rock Paper Scissors Gameplay](src/assets/gameplay.gif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Interactive UI with responsive buttons for selecting rock, paper, or scissors.
+- Randomized computer choices for fair gameplay.
+- Score tracking to determine the winner of the game.
+- Animated transitions for game interactions.
+- Play again functionality after game completion.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation & Setup
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+You can play the game via the Vercel link on the right hand side.
+To run the project locally, follow these steps:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Clone the repository:**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   git clone git@github.com:jutuli/Rock_Paper_Scissors.git
+   cd rock-paper-scissors
+
+   ```
+
+1. **Install dependencies & run the development server:**
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+## How to Play
+
+1. Click on either **Rock**, **Paper**, or **Scissors**.
+2. The computer will randomly pick an option.
+3. The winner is determined based on traditional Rock-Paper-Scissors rules:
+   - **Rock** beats **Scissors**.
+   - **Scissors** beats **Paper**.
+   - **Paper** beats **Rock**.
+   - If both choices are the same, it’s a **tie**.
+4. The first to reach **5 points** wins the game.
+5. At the end of the game, you can restart by clicking **Play Again**.
+
+## Acknowledgments
+
+This project was built as part of **Day 4** of the **React Module** in my Web Development Bootcamp. It serves as hands-on practice with React functional components, state management, and event handling.
+
+---
+
+🎮 **Enjoy the game and have fun!** 🚀
