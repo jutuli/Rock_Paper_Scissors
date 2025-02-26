@@ -2,18 +2,22 @@ import { useState } from "react";
 import Header from "./components/Header";
 import ScoreBoard from "./components/ScoreBoard";
 import GamePlay from "./components/GamePlay";
+import Result from "./components/Result";
+
+type Choice = "rock" | "paper" | "scissors";
 
 function App() {
   const [playerScore, setPlayerScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
-  const [playerChoice, setPlayerChoice] = useState("");
-  const [computerChoice, setComputerChoice] = useState("");
+  const [playerChoice, setPlayerChoice] = useState<Choice | null>(null);
+  const [computerChoice, setComputerChoice] = useState<Choice | null>(null);
 
-  const choices = ["rock", "paper", "scissors"];
+  const choices: Choice[] = ["rock", "paper", "scissors"];
 
-  const handleChoice = (choice: "rock" | "paper" | "scissors") => {
+  const handleChoice = (choice: Choice) => {
     setPlayerChoice(choice);
-    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    const randomChoice: Choice =
+      choices[Math.floor(Math.random() * choices.length)];
     setComputerChoice(randomChoice);
 
     // handle result of the game round and update scores
@@ -36,6 +40,7 @@ function App() {
       <Header />
       <ScoreBoard playerScore={playerScore} computerScore={computerScore} />
       <GamePlay makeChoice={handleChoice} />
+      <Result playerChoice={playerChoice} computerChoice={computerChoice} />
     </section>
   );
 }
