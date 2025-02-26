@@ -1,9 +1,14 @@
 interface IResultProps {
   playerChoice: "rock" | "paper" | "scissors" | null;
   computerChoice: "rock" | "paper" | "scissors" | null;
+  handleRound: () => void;
 }
 
-const Result = ({ playerChoice, computerChoice }: IResultProps) => {
+const Result = ({
+  playerChoice,
+  computerChoice,
+  handleRound,
+}: IResultProps) => {
   if (!playerChoice || !computerChoice) return null;
 
   let winnerText = "Tie!";
@@ -35,7 +40,10 @@ const Result = ({ playerChoice, computerChoice }: IResultProps) => {
       </div>
       <div className="flex flex-col items-center justify-center gap-5 text-4xl font-bold">
         <p>{winnerText}</p>
-        <button className="h-14 cursor-pointer rounded-lg border-4 border-transparent bg-amber-400 px-10 text-3xl font-bold text-slate-800 transition-all duration-300 ease-in-out hover:border-amber-400 hover:bg-slate-800 hover:text-slate-100">
+        <button
+          onClick={() => handleRound}
+          className="h-14 cursor-pointer rounded-lg border-4 border-transparent bg-amber-400 px-10 text-3xl font-bold text-slate-800 transition-all duration-300 ease-in-out hover:border-amber-400 hover:bg-slate-800 hover:text-slate-100"
+        >
           Next Round
         </button>
       </div>
