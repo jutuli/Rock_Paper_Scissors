@@ -53,6 +53,13 @@ function App() {
     setHasRoundEnded(false);
   };
 
+  // handle the restart of the game by resetting the scores and hasRoundEnded
+  const handleRestart = () => {
+    setPlayerScore(0);
+    setComputerScore(0);
+    setHasRoundEnded(false);
+  };
+
   return (
     <section className="flex h-screen flex-col items-center bg-slate-800 text-slate-100">
       <Header />
