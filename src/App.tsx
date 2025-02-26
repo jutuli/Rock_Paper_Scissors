@@ -32,18 +32,18 @@ function App() {
       ) {
         setTimeout(() => {
           setPlayerScore((prev) => prev + 1);
-        }, 1500);
+        }, 1000);
       } else {
         setTimeout(() => {
           setComputerScore((prev) => prev + 1);
-        }, 1500);
+        }, 1000);
       }
     }
 
     // set hasRoundEnded to true in order to display the result
     setTimeout(() => {
       setHasRoundEnded(true);
-    }, 1000);
+    }, 500);
   };
 
   // handle the next round by resetting the choices and hasRoundEnded
