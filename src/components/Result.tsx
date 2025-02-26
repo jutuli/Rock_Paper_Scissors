@@ -35,7 +35,7 @@ const Result = ({
       <div className="flex flex-col items-center justify-center gap-10">
         <h3 className="text-4xl font-bold">Your Choice</h3>
         <img
-          src={`src/assets/img/${playerChoice}.svg`}
+          src={`/img/${playerChoice}.svg`}
           alt={playerChoice}
           className={playerImageClassName}
         />
@@ -54,7 +54,7 @@ const Result = ({
       <div className="flex flex-col items-center justify-center gap-10">
         <h3 className="text-4xl font-bold">Computer Choice</h3>
         <img
-          src={`src/assets/img/${computerChoice}.svg`}
+          src={`/img/${computerChoice}.svg`}
           alt={computerChoice}
           className={computerImageClassName}
         />

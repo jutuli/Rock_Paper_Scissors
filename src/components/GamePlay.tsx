@@ -14,21 +14,21 @@ const GamePlay = ({ makeChoice }: IGamePlayProps) => {
           onClick={() => makeChoice("rock")}
         >
           <img
-            src="src/assets/img/rock.svg"
+            src="/img/rock.svg"
             alt="Rock"
             className="size-30 rotate-270 transition-transform duration-300 group-hover:scale-125"
           />
         </button>
         <button className={buttonDesign} onClick={() => makeChoice("paper")}>
           <img
-            src="src/assets/img/paper.svg"
+            src="/img/paper.svg"
             alt="Paper"
             className="size-30 transition-transform duration-300 group-hover:scale-125"
           />
         </button>
         <button className={buttonDesign} onClick={() => makeChoice("scissors")}>
           <img
-            src="src/assets/img/scissors.svg"
+            src="/img/scissors.svg"
             alt="Scissors"
             className="size-30 transition-transform duration-300 group-hover:scale-125"
           />
