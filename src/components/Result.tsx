@@ -24,35 +24,35 @@ const Result = ({
     winnerText = "Computer wins!";
   }
 
-  const playerImageClassName = `size-50 ${
+  const playerImageClassName = `size-24 md:size-50 ${
     playerChoice === "rock" ? "rotate-270" : ""
   }`;
-  const computerImageClassName = `size-50 ${
+  const computerImageClassName = `size-24 md:size-50 ${
     computerChoice === "rock" ? "rotate-270" : ""
   }`;
   return (
-    <section className="mt-8 flex items-center gap-20">
-      <div className="flex flex-col items-center justify-center gap-10">
-        <h3 className="text-4xl font-bold">Your Choice</h3>
+    <section className="my-4 flex flex-col items-center gap-6 md:mt-8 md:flex-row md:gap-20">
+      <div className="flex flex-col items-center justify-center gap-4 md:gap-10">
+        <h3 className="text-2xl font-bold md:text-4xl">Your Choice</h3>
         <img
           src={`/img/${playerChoice}.svg`}
           alt={playerChoice}
           className={playerImageClassName}
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-5 text-4xl font-bold">
+      <div className="order-last flex flex-col items-center justify-center gap-5 text-4xl font-bold md:order-none">
         <p>{winnerText}</p>
         {!isFinalResult && (
           <button
             onClick={handleRound}
-            className="h-14 cursor-pointer rounded-lg border-4 border-transparent bg-amber-400 px-10 text-3xl font-bold text-slate-800 transition-all duration-300 ease-in-out hover:border-amber-400 hover:bg-slate-800 hover:text-slate-100"
+            className="h-10 cursor-pointer rounded-lg border-4 border-transparent bg-amber-400 px-6 text-xl font-bold text-slate-800 transition-all duration-300 ease-in-out hover:border-amber-400 hover:bg-slate-800 hover:text-slate-100 md:h-14 md:px-10 md:text-3xl"
           >
             Next Round
           </button>
         )}
       </div>
-      <div className="flex flex-col items-center justify-center gap-10">
-        <h3 className="text-4xl font-bold">Computer Choice</h3>
+      <div className="flex flex-col items-center justify-center gap-4 md:gap-10">
+        <h3 className="text-2xl font-bold md:text-4xl">Computer Choice</h3>
         <img
           src={`/img/${computerChoice}.svg`}
           alt={computerChoice}
